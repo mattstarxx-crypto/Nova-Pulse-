@@ -4,6 +4,7 @@
 let u24=false,uSec=true,uIsF=true,starsOn=true,userName='',isPlaying=false,repeat=false;
 const tF=72;
 let currentTrack=null,progInterval=null,progVal=0;
+let browseProxy='scramjet',lastBrowseUrl='';
 
 // ═══════════════════════════════════════
 // CLOCK
@@ -213,6 +214,70 @@ function go(id,el,pill){
   else pSt.textContent=`.sidebar::after{display:none;}`;
   if(id==='music')setTimeout(initMusicPlayer,50);
   if(id==='settings')setTimeout(initBgUI,50);
+  if(id==='browse')setTimeout(initBrowse,30);
+}
+
+// ═══════════════════════════════════════
+// BROWSE + PROXY
+// ═══════════════════════════════════════
+function initBrowse(){
+  const frame=document.getElementById('browse-frame');
+  if(frame&&!frame.src)frame.src='about:blank';
+  updateBrowseStatus(`Preferred proxy: ${browseProxy==='scramjet'?'Scramjet':browseProxy==='ultraviolet'?'Ultraviolet':'Direct'} ✦`);
+}
+
+function normalizeBrowseInput(raw){
+  const v=(raw||'').trim();
+  if(!v) return '';
+  if(/^https?:\/\//i.test(v)) return v;
+  if(/^[\w.-]+\.[a-z]{2,}(\/.*)?$/i.test(v)) return `https://${v}`;
+  return `https://duckduckgo.com/?q=${encodeURIComponent(v)}`;
+}
+
+function encodeProxyUrl(url){
+  if(browseProxy==='direct') return url;
+  if(browseProxy==='scramjet') return `/scramjet/${encodeURIComponent(url)}`;
+  return `/uv/service/${encodeURIComponent(url)}`;
+}
+
+function updateBrowseStatus(msg,isError=false){
+  const st=document.getElementById('browse-status');
+  if(!st) return;
+  st.textContent=msg;
+  st.style.color=isError?'#ff8b8b':'var(--muted)';
+}
+
+function setBrowseProxy(proxy,el){
+  browseProxy=proxy;
+  document.querySelectorAll('.proxy-opt').forEach(b=>b.classList.remove('active'));
+  if(el)el.classList.add('active');
+  updateBrowseStatus(`Preferred proxy: ${proxy==='scramjet'?'Scramjet':proxy==='ultraviolet'?'Ultraviolet':'Direct'} ✦`);
+  if(lastBrowseUrl) launchBrowse(lastBrowseUrl);
+}
+
+function setBrowseInput(v){
+  const input=document.getElementById('browse-input');
+  if(!input) return;
+  input.value=v;
+  launchBrowse();
+}
+
+function launchBrowse(forceUrl=''){
+  const input=document.getElementById('browse-input');
+  const frame=document.getElementById('browse-frame');
+  if(!frame||!input) return;
+  const target=normalizeBrowseInput(forceUrl||input.value);
+  if(!target){updateBrowseStatus('Enter a URL or search term first ✦',true);return;}
+  lastBrowseUrl=target;
+  const finalUrl=encodeProxyUrl(target);
+  frame.src=finalUrl;
+  updateBrowseStatus(`Loading via ${browseProxy==='scramjet'?'Scramjet':browseProxy==='ultraviolet'?'Ultraviolet':'Direct'}...`);
+}
+
+function openBrowseInTab(){
+  if(!lastBrowseUrl){updateBrowseStatus('Open something first, then pop it out ✦',true);return;}
+  const finalUrl=encodeProxyUrl(lastBrowseUrl);
+  window.open(finalUrl,'_blank','noopener,noreferrer');
 }
 
 // ═══════════════════════════════════════

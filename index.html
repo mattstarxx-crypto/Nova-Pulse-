@@ -295,8 +295,24 @@
   <div class="page" id="p-browse">
     <div class="browse-wrap">
       <div><div class="browse-title">Browse <span>Everything</span> ✦</div></div>
-      <div class="browse-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input placeholder="Search or enter URL..." style="flex:1;background:transparent;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text);"></div>
-      <div class="browse-cats"><div class="bcat">📰 News</div><div class="bcat">🏅 Sports</div><div class="bcat">💡 Tech</div><div class="bcat">🍿 Entertainment</div><div class="bcat">📈 Markets</div><div class="bcat">🌍 World</div><div class="bcat">🎮 Gaming</div><div class="bcat">🔬 Science</div><div class="bcat">🎨 Art</div><div class="bcat">✦ Trending</div></div>
+      <div class="browse-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input id="browse-input" placeholder="Search or enter URL..." onkeydown="if(event.key==='Enter')launchBrowse()">
+        <button class="browse-go" onclick="launchBrowse()">Go ✦</button>
+      </div>
+      <div class="browse-proxy-row">
+        <button class="proxy-opt active" data-proxy="scramjet" onclick="setBrowseProxy('scramjet',this)">Scramjet</button>
+        <button class="proxy-opt" data-proxy="ultraviolet" onclick="setBrowseProxy('ultraviolet',this)">Ultraviolet</button>
+        <button class="proxy-opt" data-proxy="direct" onclick="setBrowseProxy('direct',this)">Direct</button>
+      </div>
+      <div class="browse-status" id="browse-status">Preferred proxy: Scramjet ✦</div>
+      <div class="browse-cats">
+        <div class="bcat" onclick="setBrowseInput('news.google.com')">📰 News</div><div class="bcat" onclick="setBrowseInput('espn.com')">🏅 Sports</div><div class="bcat" onclick="setBrowseInput('theverge.com')">💡 Tech</div><div class="bcat" onclick="setBrowseInput('youtube.com')">🍿 Entertainment</div><div class="bcat" onclick="setBrowseInput('finance.yahoo.com')">📈 Markets</div><div class="bcat" onclick="setBrowseInput('wikipedia.org')">🌍 World</div><div class="bcat" onclick="setBrowseInput('twitch.tv')">🎮 Gaming</div><div class="bcat" onclick="setBrowseInput('nasa.gov')">🔬 Science</div><div class="bcat" onclick="setBrowseInput('behance.net')">🎨 Art</div><div class="bcat" onclick="setBrowseInput('https://x.com/explore')">✦ Trending</div>
+      </div>
+      <div class="browse-actions">
+        <button class="browse-open-tab" onclick="openBrowseInTab()">Open in New Tab</button>
+      </div>
+      <iframe id="browse-frame" class="browse-frame" title="Nova Pulse Proxy Browser" referrerpolicy="no-referrer" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts"></iframe>
     </div>
   </div>
 
