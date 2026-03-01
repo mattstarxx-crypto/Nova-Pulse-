@@ -4,6 +4,9 @@
 let u24=false,uSec=true,uIsF=true,starsOn=true,userName='',isPlaying=false,repeat=false;
 const tF=72;
 let currentTrack=null,progInterval=null,progVal=0;
+let browseProxy='scramjet',lastBrowseUrl='';
+const browseProxyAvailability={scramjet:null,ultraviolet:null};
+let browseProxyChecked=false;
 
 // ═══════════════════════════════════════
 // CLOCK
@@ -213,6 +216,121 @@ function go(id,el,pill){
   else pSt.textContent=`.sidebar::after{display:none;}`;
   if(id==='music')setTimeout(initMusicPlayer,50);
   if(id==='settings')setTimeout(initBgUI,50);
+  if(id==='browse')setTimeout(initBrowse,30);
+}
+
+// ═══════════════════════════════════════
+// BROWSE + PROXY
+// ═══════════════════════════════════════
+function proxyLabel(mode){return mode==='scramjet'?'Scramjet':mode==='ultraviolet'?'Ultraviolet':'Direct';}
+
+function repoBasePath(){
+  const p=window.location.pathname||'/';
+  return p.endsWith('/')?p:p.slice(0,p.lastIndexOf('/')+1);
+}
+
+function proxyPrefix(mode){
+  const base=repoBasePath();
+  if(mode==='scramjet') return `${base}scramjet/`;
+  if(mode==='ultraviolet') return `${base}uv/service/`;
+  return '';
+}
+
+function initBrowse(){
+  const frame=document.getElementById('browse-frame');
+  if(frame&&!frame.src)frame.src='about:blank';
+  updateBrowseStatus(`Preferred proxy: ${proxyLabel(browseProxy)} ✦`);
+  if(!browseProxyChecked) checkProxyBackends();
+}
+
+async function checkProxyBackends(){
+  browseProxyChecked=true;
+  const checks=['scramjet','ultraviolet'].map(async mode=>{
+    const url=proxyPrefix(mode);
+    try{
+      const resp=await fetch(url,{method:'HEAD'});
+      browseProxyAvailability[mode]=resp.ok;
+    }catch(e){browseProxyAvailability[mode]=false;}
+  });
+  await Promise.all(checks);
+  if(browseProxy!=='direct'&&browseProxyAvailability[browseProxy]===false){
+    browseProxy='direct';
+    syncProxyButtons();
+    updateBrowseStatus('Proxy backend not found here — using Direct mode ✦',true);
+  }
+}
+
+function normalizeBrowseInput(raw){
+  const v=(raw||'').trim();
+  if(!v) return '';
+  if(/^https?:\/\//i.test(v)) return v;
+  if(/^[\w.-]+\.[a-z]{2,}(\/.*)?$/i.test(v)) return `https://${v}`;
+  return `https://duckduckgo.com/?q=${encodeURIComponent(v)}`;
+}
+
+function encodeProxyUrl(url,mode=browseProxy){
+  if(mode==='direct') return url;
+  return `${proxyPrefix(mode)}${encodeURIComponent(url)}`;
+}
+
+function updateBrowseStatus(msg,isError=false){
+  const st=document.getElementById('browse-status');
+  if(!st) return;
+  st.textContent=msg;
+  st.style.color=isError?'#ff8b8b':'var(--muted)';
+}
+
+function syncProxyButtons(){
+  document.querySelectorAll('.proxy-opt').forEach(b=>{
+    b.classList.toggle('active',b.dataset.proxy===browseProxy);
+  });
+}
+
+function setBrowseProxy(proxy,el){
+  if(proxy!=='direct'&&browseProxyAvailability[proxy]===false){
+    browseProxy='direct';
+    syncProxyButtons();
+    updateBrowseStatus(`${proxyLabel(proxy)} backend is unavailable on this site. Using Direct ✦`,true);
+    if(lastBrowseUrl) launchBrowse(lastBrowseUrl);
+    return;
+  }
+  browseProxy=proxy;
+  document.querySelectorAll('.proxy-opt').forEach(b=>b.classList.remove('active'));
+  if(el)el.classList.add('active');
+  updateBrowseStatus(`Preferred proxy: ${proxyLabel(proxy)} ✦`);
+  if(lastBrowseUrl) launchBrowse(lastBrowseUrl);
+}
+
+function setBrowseInput(v){
+  const input=document.getElementById('browse-input');
+  if(!input) return;
+  input.value=v;
+  launchBrowse();
+}
+
+function launchBrowse(forceUrl=''){
+  const input=document.getElementById('browse-input');
+  const frame=document.getElementById('browse-frame');
+  if(!frame||!input) return;
+  const target=normalizeBrowseInput(forceUrl||input.value);
+  if(!target){updateBrowseStatus('Enter a URL or search term first ✦',true);return;}
+  let mode=browseProxy;
+  let fallbackToDirect=false;
+  if(mode!=='direct'&&browseProxyAvailability[mode]===false){
+    mode='direct';
+    browseProxy='direct';
+    fallbackToDirect=true;
+    syncProxyButtons();
+  }
+  lastBrowseUrl=target;
+  frame.src=encodeProxyUrl(target,mode);
+  const suffix=fallbackToDirect?' (proxy unavailable on this host)':'';
+  updateBrowseStatus(`Loading via ${proxyLabel(mode)}${suffix}...`,fallbackToDirect);
+}
+
+function openBrowseInTab(){
+  if(!lastBrowseUrl){updateBrowseStatus('Open something first, then pop it out ✦',true);return;}
+  window.open(encodeProxyUrl(lastBrowseUrl),'_blank','noopener,noreferrer');
 }
 
 // ═══════════════════════════════════════
