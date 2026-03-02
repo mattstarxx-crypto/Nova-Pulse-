@@ -294,6 +294,32 @@
   <!-- BROWSE -->
   <div class="page" id="p-browse">
     <div class="browse-wrap">
+      <div class="browse-header-row">
+        <div><div class="browse-title">Browse <span>Everything</span> ✦</div></div>
+        <div class="browse-status" id="browse-status">Preferred proxy: Scramjet ✦</div>
+      </div>
+      <div class="browse-browser" id="browse-browser-shell">
+        <div class="browse-toolbar">
+          <div class="browse-toolbar-left">
+            <button class="proxy-opt active" data-proxy="scramjet" onclick="setBrowseProxy('scramjet',this)">Scramjet</button>
+            <button class="proxy-opt" data-proxy="ultraviolet" onclick="setBrowseProxy('ultraviolet',this)">Ultraviolet</button>
+            <button class="proxy-opt" data-proxy="direct" onclick="setBrowseProxy('direct',this)">Direct</button>
+          </div>
+          <div class="browse-toolbar-right">
+            <button class="browse-tool-btn" onclick="openBrowseInTab()">New Tab</button>
+            <button class="browse-tool-btn" id="browse-fullscreen-btn" onclick="toggleBrowseFullscreen()">Fullscreen</button>
+          </div>
+        </div>
+        <div class="browse-search browse-search-top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input id="browse-input" placeholder="Search or enter URL..." onkeydown="if(event.key==='Enter')launchBrowse()">
+          <button class="browse-go" onclick="launchBrowse()">Go ✦</button>
+        </div>
+        <div class="browse-cats browse-cats-compact">
+          <div class="bcat" onclick="setBrowseInput('news.google.com')">📰 News</div><div class="bcat" onclick="setBrowseInput('espn.com')">🏅 Sports</div><div class="bcat" onclick="setBrowseInput('theverge.com')">💡 Tech</div><div class="bcat" onclick="setBrowseInput('youtube.com')">🍿 Entertainment</div><div class="bcat" onclick="setBrowseInput('finance.yahoo.com')">📈 Markets</div><div class="bcat" onclick="setBrowseInput('wikipedia.org')">🌍 World</div><div class="bcat" onclick="setBrowseInput('twitch.tv')">🎮 Gaming</div><div class="bcat" onclick="setBrowseInput('nasa.gov')">🔬 Science</div><div class="bcat" onclick="setBrowseInput('behance.net')">🎨 Art</div><div class="bcat" onclick="setBrowseInput('https://x.com/explore')">✦ Trending</div>
+        </div>
+        <iframe id="browse-frame" class="browse-frame" title="Nova Pulse Proxy Browser" referrerpolicy="no-referrer" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts"></iframe>
+      </div>
       <div><div class="browse-title">Browse <span>Everything</span> ✦</div></div>
       <div class="browse-search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>

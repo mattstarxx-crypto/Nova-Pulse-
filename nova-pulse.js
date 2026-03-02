@@ -326,6 +326,7 @@ function launchBrowse(forceUrl=''){
   const frame=document.getElementById('browse-frame');
   if(!frame||!input) return;
   const target=normalizeBrowseInput(forceUrl||input.value);
+  input.value=target;
   if(!target){updateBrowseStatus('Enter a URL or search term first ✦',true);return;}
   let mode=browseProxy;
   let fallbackToDirect=false;
@@ -339,6 +340,36 @@ function launchBrowse(forceUrl=''){
   frame.src=encodeProxyUrl(target,mode);
   const suffix=fallbackToDirect?' (proxy unavailable on this host)':'';
   updateBrowseStatus(`Loading via ${proxyLabel(mode)}${suffix}...`,fallbackToDirect);
+}
+
+
+async function toggleBrowseFullscreen(){
+  const shell=document.getElementById('browse-browser-shell');
+  const btn=document.getElementById('browse-fullscreen-btn');
+  if(!shell) return;
+  try{
+    if(document.fullscreenElement){
+      await document.exitFullscreen();
+      if(btn)btn.textContent='Fullscreen';
+    }else{
+      await shell.requestFullscreen();
+      if(btn)btn.textContent='Exit Fullscreen';
+    }
+  }catch(e){
+    updateBrowseStatus('Fullscreen is blocked in this browser/session ✦',true);
+  }
+}
+
+document.addEventListener('fullscreenchange',()=>{
+  const btn=document.getElementById('browse-fullscreen-btn');
+  if(!btn) return;
+  btn.textContent=document.fullscreenElement?'Exit Fullscreen':'Fullscreen';
+});
+
+function openBrowseInTab(){
+  if(!lastBrowseUrl){updateBrowseStatus('Open something first, then pop it out ✦',true);return;}
+  const mode=(browseProxy!=='direct'&&browseProxyAvailability[browseProxy]===false)?'direct':browseProxy;
+  window.open(encodeProxyUrl(lastBrowseUrl,mode),'_blank','noopener,noreferrer');
   lastBrowseUrl=target;
   const finalUrl=encodeProxyUrl(target);
   frame.src=finalUrl;
