@@ -258,6 +258,10 @@ async function checkProxyBackends(){
     syncProxyButtons();
     updateBrowseStatus('Proxy backend not found here — using Direct mode ✦',true);
   }
+function initBrowse(){
+  const frame=document.getElementById('browse-frame');
+  if(frame&&!frame.src)frame.src='about:blank';
+  updateBrowseStatus(`Preferred proxy: ${browseProxy==='scramjet'?'Scramjet':browseProxy==='ultraviolet'?'Ultraviolet':'Direct'} ✦`);
 }
 
 function normalizeBrowseInput(raw){
@@ -271,6 +275,10 @@ function normalizeBrowseInput(raw){
 function encodeProxyUrl(url,mode=browseProxy){
   if(mode==='direct') return url;
   return `${proxyPrefix(mode)}${encodeURIComponent(url)}`;
+function encodeProxyUrl(url){
+  if(browseProxy==='direct') return url;
+  if(browseProxy==='scramjet') return `/scramjet/${encodeURIComponent(url)}`;
+  return `/uv/service/${encodeURIComponent(url)}`;
 }
 
 function updateBrowseStatus(msg,isError=false){
@@ -298,6 +306,11 @@ function setBrowseProxy(proxy,el){
   document.querySelectorAll('.proxy-opt').forEach(b=>b.classList.remove('active'));
   if(el)el.classList.add('active');
   updateBrowseStatus(`Preferred proxy: ${proxyLabel(proxy)} ✦`);
+function setBrowseProxy(proxy,el){
+  browseProxy=proxy;
+  document.querySelectorAll('.proxy-opt').forEach(b=>b.classList.remove('active'));
+  if(el)el.classList.add('active');
+  updateBrowseStatus(`Preferred proxy: ${proxy==='scramjet'?'Scramjet':proxy==='ultraviolet'?'Ultraviolet':'Direct'} ✦`);
   if(lastBrowseUrl) launchBrowse(lastBrowseUrl);
 }
 
@@ -354,12 +367,20 @@ document.addEventListener('fullscreenchange',()=>{
 });
 
 function openBrowseInTab(){
-  const input=document.getElementById('browse-input');
-  if(input&&input.value.trim()) lastBrowseUrl=normalizeBrowseInput(input.value);
-  if(!lastBrowseUrl){updateBrowseStatus('Type a URL/search first ✦',true);return;}
+  if(!lastBrowseUrl){updateBrowseStatus('Open something first, then pop it out ✦',true);return;}
   const mode=(browseProxy!=='direct'&&browseProxyAvailability[browseProxy]===false)?'direct':browseProxy;
-  const opened=window.open(encodeProxyUrl(lastBrowseUrl,mode),'_blank','noopener,noreferrer');
-  if(!opened) updateBrowseStatus('Popup blocked — allow popups for New Tab ✦',true);
+  window.open(encodeProxyUrl(lastBrowseUrl,mode),'_blank','noopener,noreferrer');
+  lastBrowseUrl=target;
+  const finalUrl=encodeProxyUrl(target);
+  frame.src=finalUrl;
+  updateBrowseStatus(`Loading via ${browseProxy==='scramjet'?'Scramjet':browseProxy==='ultraviolet'?'Ultraviolet':'Direct'}...`);
+}
+
+function openBrowseInTab(){
+  if(!lastBrowseUrl){updateBrowseStatus('Open something first, then pop it out ✦',true);return;}
+  window.open(encodeProxyUrl(lastBrowseUrl),'_blank','noopener,noreferrer');
+  const finalUrl=encodeProxyUrl(lastBrowseUrl);
+  window.open(finalUrl,'_blank','noopener,noreferrer');
 }
 
 // ═══════════════════════════════════════
