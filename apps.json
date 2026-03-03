@@ -1,0 +1,157 @@
+{
+  "sections": [
+    {
+      "label": "Social",
+      "apps": [
+        "TikTok",
+        "Instagram",
+        "X",
+        "Snapchat",
+        "Threads",
+        "BeReal"
+      ]
+    },
+    {
+      "label": "Stream & Play",
+      "apps": [
+        "YouTube",
+        "Twitch",
+        "Spotify",
+        "Reddit"
+      ]
+    },
+    {
+      "label": "Connect",
+      "apps": [
+        "Discord",
+        "WhatsApp",
+        "Telegram",
+        "LinkedIn"
+      ]
+    },
+    {
+      "label": "Productivity",
+      "apps": [
+        "Gmail",
+        "Notion",
+        "GitHub"
+      ]
+    }
+  ],
+  "featured": [
+    "TikTok",
+    "YouTube",
+    "Discord",
+    "Instagram"
+  ],
+  "data": {
+    "TikTok": {
+      "color": "#010101",
+      "url": "https://www.tiktok.com",
+      "desc": "Trending short-form video for everyone.",
+      "tag": "🔥 Trending"
+    },
+    "YouTube": {
+      "color": "#ff0000",
+      "url": "https://www.youtube.com",
+      "desc": "Watch, stream and create anything.",
+      "tag": "▶ Streaming"
+    },
+    "Discord": {
+      "color": "#5865f2",
+      "url": "https://discord.com/app",
+      "desc": "Your communities, all in one place.",
+      "tag": "💬 Social"
+    },
+    "Instagram": {
+      "color": "#e1306c",
+      "url": "https://www.instagram.com",
+      "desc": "Photos, reels & stories from the world.",
+      "tag": "✦ Social"
+    },
+    "X": {
+      "color": "#000000",
+      "url": "https://x.com",
+      "desc": "What's happening right now.",
+      "tag": "✦ Social"
+    },
+    "Twitch": {
+      "color": "#9146ff",
+      "url": "https://www.twitch.tv",
+      "desc": "Live streams from your favorite creators.",
+      "tag": "🎮 Live"
+    },
+    "Snapchat": {
+      "color": "#fffc00",
+      "url": "https://web.snapchat.com",
+      "desc": "Snaps, streaks, and stories.",
+      "tag": "👻 Snap"
+    },
+    "Reddit": {
+      "color": "#ff4500",
+      "url": "https://www.reddit.com",
+      "desc": "The front page of the internet.",
+      "tag": "🔥 Trending"
+    },
+    "Spotify": {
+      "color": "#1db954",
+      "url": "https://open.spotify.com",
+      "desc": "Music and podcasts for every mood.",
+      "tag": "🎵 Music"
+    },
+    "Pinterest": {
+      "color": "#e60023",
+      "url": "https://www.pinterest.com",
+      "desc": "Find ideas for anything.",
+      "tag": "📌 Discover"
+    },
+    "BeReal": {
+      "color": "#000000",
+      "url": "https://bere.al",
+      "desc": "Your real life, unfiltered.",
+      "tag": "📸 Real"
+    },
+    "Threads": {
+      "color": "#000000",
+      "url": "https://www.threads.net",
+      "desc": "Conversations from Instagram.",
+      "tag": "💬 Social"
+    },
+    "LinkedIn": {
+      "color": "#0a66c2",
+      "url": "https://www.linkedin.com",
+      "desc": "Your professional network.",
+      "tag": "💼 Pro"
+    },
+    "Telegram": {
+      "color": "#2aabee",
+      "url": "https://web.telegram.org",
+      "desc": "Fast, secure messaging.",
+      "tag": "💬 Messaging"
+    },
+    "WhatsApp": {
+      "color": "#25d366",
+      "url": "https://web.whatsapp.com",
+      "desc": "Message anyone, anywhere.",
+      "tag": "💬 Messaging"
+    },
+    "Gmail": {
+      "color": "#ea4335",
+      "url": "https://mail.google.com",
+      "desc": "Your inbox, reimagined.",
+      "tag": "📧 Mail"
+    },
+    "Notion": {
+      "color": "#000000",
+      "url": "https://notion.so",
+      "desc": "Docs, wikis, and projects in one.",
+      "tag": "📝 Productivity"
+    },
+    "GitHub": {
+      "color": "#24292e",
+      "url": "https://github.com",
+      "desc": "Where code lives and grows.",
+      "tag": "💻 Dev"
+    }
+  }
+}

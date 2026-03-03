@@ -1,0 +1,212 @@
+{
+  "Galactic Ops II": {
+    "emoji": "🌌",
+    "genre": "Shooter",
+    "rating": "4.9",
+    "rcount": "128k",
+    "url": "https://www.crazygames.com/game/krunker",
+    "desc": "Drop into a new galaxy and dominate cross-platform multiplayer. Build your squad, unlock legendary gear, and battle across 40+ unique maps in the most anticipated shooter of the year.",
+    "tags": [
+      "🚀 Shooter",
+      "👥 Multiplayer",
+      "⭐ Featured",
+      "🎮 Controller"
+    ],
+    "screens": [
+      "🌠",
+      "💥",
+      "🚀",
+      "🛸",
+      "🌍"
+    ]
+  },
+  "Speed Racer X": {
+    "emoji": "🏎️",
+    "genre": "Racing",
+    "rating": "4.7",
+    "rcount": "54k",
+    "url": "https://www.crazygames.com/game/madalin-stunt-cars-2",
+    "desc": "Burn rubber across 30 ultra-fast tracks from neon cityscapes to volcanic deserts. Customize every inch of your ride and climb the global leaderboard.",
+    "tags": [
+      "🏎 Racing",
+      "⚡ Fast-Paced",
+      "🏆 Competitive",
+      "🎮 Controller"
+    ],
+    "screens": [
+      "🏁",
+      "🌆",
+      "🏔️",
+      "🌋",
+      "🏅"
+    ]
+  },
+  "Dark Realm": {
+    "emoji": "⚔️",
+    "genre": "RPG",
+    "rating": "4.8",
+    "rcount": "89k",
+    "url": "https://www.crazygames.com/game/raid-heroes-total-war",
+    "desc": "An epic open-world RPG where every choice shapes the fate of civilization. Explore 200+ hours of story-rich content across a beautifully dark fantasy world.",
+    "tags": [
+      "⚔️ RPG",
+      "🌍 Open World",
+      "📖 Story-Rich",
+      "🐉 Fantasy"
+    ],
+    "screens": [
+      "🏰",
+      "🌑",
+      "⚔️",
+      "🗡️",
+      "💀"
+    ]
+  },
+  "Mindrift": {
+    "emoji": "🧩",
+    "genre": "Puzzle",
+    "rating": "4.6",
+    "rcount": "31k",
+    "url": "https://www.crazygames.com/game/2048",
+    "desc": "Bend reality with mind-twisting puzzles across 150 hand-crafted levels. A chill lo-fi soundtrack makes this the perfect indie escape.",
+    "tags": [
+      "🧩 Puzzle",
+      "🎵 Lo-Fi",
+      "😌 Relaxing",
+      "💡 Indie"
+    ],
+    "screens": [
+      "🌀",
+      "💡",
+      "🔮",
+      "🧠",
+      "✨"
+    ]
+  },
+  "Arena Pro": {
+    "emoji": "🏆",
+    "genre": "Sports",
+    "rating": "4.5",
+    "rcount": "72k",
+    "url": "https://www.crazygames.com/game/basketball-stars",
+    "desc": "The ultimate competitive sports sim. Play solo seasons or jump into ranked online matches with full stadium atmosphere and real-time commentary.",
+    "tags": [
+      "🏆 Sports",
+      "👥 Online",
+      "🎙️ Commentary",
+      "📊 Ranked"
+    ],
+    "screens": [
+      "🏟️",
+      "⚽",
+      "🏀",
+      "🥇",
+      "🎯"
+    ]
+  },
+  "Forest Survival": {
+    "emoji": "🌲",
+    "genre": "Survival",
+    "rating": "4.4",
+    "rcount": "47k",
+    "url": "https://www.crazygames.com/game/surviv-io",
+    "desc": "Crash-landed in an ancient forest with nothing but your wits. Craft, build, hunt, and survive against nature and other players in this brutal co-op survival experience.",
+    "tags": [
+      "🌲 Survival",
+      "🔨 Crafting",
+      "👥 Co-op",
+      "🔥 Hardcore"
+    ],
+    "screens": [
+      "🏕️",
+      "🌿",
+      "🔥",
+      "🐻",
+      "⛏️"
+    ]
+  },
+  "Dead Sector": {
+    "emoji": "🧟",
+    "genre": "Horror",
+    "rating": "4.7",
+    "rcount": "63k",
+    "url": "https://www.crazygames.com/game/dead-zed",
+    "desc": "A terrifying solo horror experience set in an abandoned space station overrun by the undead. Every shadow hides something. Every sound matters.",
+    "tags": [
+      "🧟 Horror",
+      "🔦 Solo",
+      "🚀 Sci-Fi",
+      "😱 Jump Scares"
+    ],
+    "screens": [
+      "🌑",
+      "🔦",
+      "💀",
+      "🩸",
+      "👁️"
+    ]
+  },
+  "Dragon Keep": {
+    "emoji": "🐉",
+    "genre": "Fantasy",
+    "rating": "4.6",
+    "rcount": "55k",
+    "url": "https://www.crazygames.com/game/kingdom-rush",
+    "desc": "Command armies, forge alliances, and claim the Dragon Throne. A deep strategy-RPG hybrid with stunning hand-painted visuals and a sweeping orchestral score.",
+    "tags": [
+      "🐉 Fantasy",
+      "⚔️ Strategy",
+      "🎼 Orchestral",
+      "👑 Kingdom"
+    ],
+    "screens": [
+      "🏰",
+      "🐉",
+      "⚔️",
+      "🌄",
+      "💎"
+    ]
+  },
+  "Mech Storm": {
+    "emoji": "🤖",
+    "genre": "Action",
+    "rating": "4.8",
+    "rcount": "96k",
+    "url": "https://www.crazygames.com/game/mech-battle-simulator",
+    "desc": "Pilot colossal mechs in explosive 6v6 PvP battles. Unlock 60+ mech frames, each with unique weapons and abilities. The next evolution of team-based action.",
+    "tags": [
+      "🤖 Mech",
+      "💥 Action",
+      "👥 PvP",
+      "🔫 Shooter"
+    ],
+    "screens": [
+      "🤖",
+      "💥",
+      "🏙️",
+      "⚡",
+      "🛡️"
+    ]
+  },
+  "Scramjet": {
+    "emoji": "✈️",
+    "genre": "Arcade",
+    "rating": "4.7",
+    "rcount": "41k",
+    "url": "https://www.crazygames.com/game/scramjet",
+    "desc": "Strap into a scramjet and blast through the skies at hypersonic speed. Dodge obstacles, nail perfect lines, and rack up combos in this ultra-fast arcade runner.",
+    "tags": [
+      "✈️ Arcade",
+      "⚡ Fast-Paced",
+      "🏆 Score Attack",
+      "🎮 Solo"
+    ],
+    "screens": [
+      "🌤️",
+      "💨",
+      "🔥",
+      "⚡",
+      "🏅"
+    ]
+  }
+}
