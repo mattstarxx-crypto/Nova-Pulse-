@@ -1,42 +1,86 @@
 {
-  "Scramjet": {
-    "emoji": "✈️",
-    "genre": "Arcade",
-    "rating": "4.7",
-    "rcount": "41k",
-    "url": "https://www.crazygames.com/game/scramjet",
-    "desc": "Strap into a scramjet and blast through the skies at hypersonic speed. Dodge obstacles, nail perfect lines, and rack up combos in this ultra-fast arcade runner.",
+  "Fnaf 1": {
+    "emoji": "🐻",
+    "genre": "Horror",
+    "rating": "",
+    "rcount": "",
+    "url": "https://schoolsection.top/classroom/lesson-27/",
+    "desc": "Five Nights at Freddy's — survive the night shift at Freddy Fazbear's Pizza. Watch the cameras, manage the power, and don't let them in.",
     "tags": [
-      "✈️ Arcade",
+      "🐻 Horror",
+      "🔦 Solo",
+      "😱 Survival",
+      "🎮 Classic"
+    ],
+    "screens": [
+      "🐻",
+      "🔦",
+      "📷",
+      "😱",
+      "🌑"
+    ]
+  },
+  "Basket Random": {
+    "emoji": "🏀",
+    "genre": "Sports",
+    "rating": "4.6",
+    "rcount": "88k",
+    "url": "https://files.twoplayergames.org/files/games/other/Basket_Random/index.html",
+    "desc": "Wacky two-player basketball with ragdoll physics and random madness every round. Easy to pick up, impossible to put down.",
+    "tags": [
+      "🏀 Basketball",
+      "👥 2 Player",
+      "😂 Ragdoll",
+      "⚡ Casual"
+    ],
+    "screens": [
+      "🏀",
+      "😂",
+      "🏆",
+      "👥",
+      "⚡"
+    ]
+  },
+  "Slope": {
+    "emoji": "🔵",
+    "genre": "Arcade",
+    "rating": "4.8",
+    "rcount": "210k",
+    "url": "https://www.crazygames.com/game/slope",
+    "desc": "Roll a ball down an endless neon slope at breakneck speed. Dodge the walls, survive the drops, beat your high score.",
+    "tags": [
+      "🔵 Arcade",
       "⚡ Fast-Paced",
-      "🏆 Score Attack",
+      "🏆 High Score",
       "🎮 Solo"
     ],
     "screens": [
-      "🌤️",
+      "🔵",
       "💨",
-      "🔥",
+      "🌀",
       "⚡",
       "🏅"
     ]
   },
-  "Lesson 27": {
-    "emoji": "📚",
-    "genre": "School",
-    "rating": "",
-    "rcount": "",
-    "url": "https://schoolsection.top/classroom/lesson-27/",
-    "desc": "Lesson 27 — open in fullscreen for the best experience.",
+  "Color Tunnel": {
+    "emoji": "🌈",
+    "genre": "Arcade",
+    "rating": "4.5",
+    "rcount": "62k",
+    "url": "https://html5.gamedistribution.com/b067ade7a13a4d50bc3f65e2401b55c8/?gd_sdk_referrer_url=https://tunnelrushgame.io/color-tunnel",
+    "desc": "Fly through a psychedelic color tunnel at insane speed. Dodge spinning obstacles and see how far you can go.",
     "tags": [
-      "📚 School",
-      "🎓 Lesson"
+      "🌈 Arcade",
+      "⚡ Fast-Paced",
+      "🎨 Colorful",
+      "🎮 Solo"
     ],
     "screens": [
-      "📖",
-      "✏️",
-      "🧠",
-      "📝",
-      "🎓"
+      "🌈",
+      "💨",
+      "🔵",
+      "⚡",
+      "🌀"
     ]
   }
 }
