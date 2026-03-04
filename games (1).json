@@ -1,0 +1,42 @@
+{
+  "Scramjet": {
+    "emoji": "✈️",
+    "genre": "Arcade",
+    "rating": "4.7",
+    "rcount": "41k",
+    "url": "https://www.crazygames.com/game/scramjet",
+    "desc": "Strap into a scramjet and blast through the skies at hypersonic speed. Dodge obstacles, nail perfect lines, and rack up combos in this ultra-fast arcade runner.",
+    "tags": [
+      "✈️ Arcade",
+      "⚡ Fast-Paced",
+      "🏆 Score Attack",
+      "🎮 Solo"
+    ],
+    "screens": [
+      "🌤️",
+      "💨",
+      "🔥",
+      "⚡",
+      "🏅"
+    ]
+  },
+  "Lesson 27": {
+    "emoji": "📚",
+    "genre": "School",
+    "rating": "",
+    "rcount": "",
+    "url": "https://schoolsection.top/classroom/lesson-27/",
+    "desc": "Lesson 27 — open in fullscreen for the best experience.",
+    "tags": [
+      "📚 School",
+      "🎓 Lesson"
+    ],
+    "screens": [
+      "📖",
+      "✏️",
+      "🧠",
+      "📝",
+      "🎓"
+    ]
+  }
+}
