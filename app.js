@@ -1,3 +1,29 @@
+// ═══════════════════════════════════════
+// GAME REQUEST
+// ═══════════════════════════════════════
+function openGameRequest(){
+  document.getElementById('game-request-overlay').classList.add('open');
+  setTimeout(()=>document.getElementById('game-request-input').focus(), 300);
+}
+
+function closeGameRequest(){
+  document.getElementById('game-request-overlay').classList.remove('open');
+  document.getElementById('game-request-input').value='';
+}
+
+function submitGameRequest(){
+  const val = document.getElementById('game-request-input').value.trim();
+  if(!val) return;
+  const btn = document.querySelector('#game-request-overlay .game-play-btn');
+  btn.textContent = '✦ Request Sent!';
+  btn.style.background = 'var(--accent2)';
+  setTimeout(()=>{
+    closeGameRequest();
+    btn.textContent = 'Submit Request ✦';
+    btn.style.background = '';
+  }, 1800);
+}
+
 // ── Data loaders ──────────────────────────────────────────────────────────
 let gameLibrary = {};
 let gameUrls = {};
