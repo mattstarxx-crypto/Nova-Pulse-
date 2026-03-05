@@ -1,0 +1,170 @@
+{
+  "Fnaf 1": {
+    "emoji": "🐻",
+    "genre": "Horror",
+    "rating": "",
+    "rcount": "",
+    "url": "https://schoolsection.top/classroom/lesson-27/",
+    "desc": "Five Nights at Freddy's — survive the night shift at Freddy Fazbear's Pizza. Watch the cameras, manage the power, and don't let them in.",
+    "tags": [
+      "🐻 Horror",
+      "🔦 Solo",
+      "😱 Survival",
+      "🎮 Classic"
+    ],
+    "screens": [
+      "🐻",
+      "🔦",
+      "📷",
+      "😱",
+      "🌑"
+    ]
+  },
+  "Basket Random": {
+    "emoji": "🏀",
+    "genre": "Sports",
+    "rating": "4.6",
+    "rcount": "88k",
+    "url": "https://files.twoplayergames.org/files/games/other/Basket_Random/index.html",
+    "desc": "Wacky two-player basketball with ragdoll physics and random madness every round. Easy to pick up, impossible to put down.",
+    "tags": [
+      "🏀 Basketball",
+      "👥 2 Player",
+      "😂 Ragdoll",
+      "⚡ Casual"
+    ],
+    "screens": [
+      "🏀",
+      "😂",
+      "🏆",
+      "👥",
+      "⚡"
+    ]
+  },
+  "Slope": {
+    "emoji": "🔵",
+    "genre": "Arcade",
+    "rating": "4.8",
+    "rcount": "210k",
+    "url": "https://storage.y8.com/y8-studio/unity_webgl/Gani/slope-game_2025_v3/?key=9757549&value=80527",
+    "desc": "Roll a ball down an endless neon slope at breakneck speed. Dodge the walls, survive the drops, beat your high score.",
+    "tags": [
+      "🔵 Arcade",
+      "⚡ Fast-Paced",
+      "🏆 High Score",
+      "🎮 Solo"
+    ],
+    "screens": [
+      "🔵",
+      "💨",
+      "🌀",
+      "⚡",
+      "🏅"
+    ]
+  },
+  "Color Tunnel": {
+    "emoji": "🌈",
+    "genre": "Arcade",
+    "rating": "4.5",
+    "rcount": "62k",
+    "url": "https://html5.gamedistribution.com/b067ade7a13a4d50bc3f65e2401b55c8/?gd_sdk_referrer_url=https://tunnelrushgame.io/color-tunnel",
+    "desc": "Fly through a psychedelic color tunnel at insane speed. Dodge spinning obstacles and see how far you can go.",
+    "tags": [
+      "🌈 Arcade",
+      "⚡ Fast-Paced",
+      "🎨 Colorful",
+      "🎮 Solo"
+    ],
+    "screens": [
+      "🌈",
+      "💨",
+      "🔵",
+      "⚡",
+      "🌀"
+    ]
+  },
+  "Ragdoll Archers": {
+    "emoji": "🏹",
+    "genre": "Action",
+    "rating": "4.7",
+    "rcount": "73k",
+    "url": "https://bitlifeonline.github.io/ragdoll-archers/",
+    "desc": "Draw your bow and unleash arrows on ragdoll enemies. Physics-based archery chaos with satisfying kills and wild ragdoll reactions.",
+    "tags": [
+      "🏹 Archery",
+      "💥 Physics",
+      "😂 Ragdoll",
+      "🎮 Solo"
+    ],
+    "screens": [
+      "🏹",
+      "💥",
+      "😂",
+      "🎯",
+      "⚔️"
+    ]
+  },
+  "Ragdoll Hit": {
+    "emoji": "👊",
+    "genre": "Action",
+    "rating": "4.6",
+    "rcount": "58k",
+    "url": "https://freetoplayz.github.io/ragdoll-hit/",
+    "desc": "Launch ragdolls and watch them fly, bounce, and crumple on impact. Satisfying physics-based carnage with increasingly wild levels.",
+    "tags": [
+      "👊 Action",
+      "💥 Physics",
+      "😂 Ragdoll",
+      "🎮 Solo"
+    ],
+    "screens": [
+      "👊",
+      "💥",
+      "😂",
+      "🌀",
+      "🎯"
+    ]
+  },
+  "Death Run": {
+    "emoji": "💀",
+    "genre": "Action",
+    "rating": "4.7",
+    "rcount": "95k",
+    "url": "https://storage.y8.com/y8-studio/unity_webgl/bitlaslt/death_run_wasm_v1/?key=y8&ratio_tolerant=true&value=default",
+    "desc": "Sprint through a deadly obstacle course where one wrong move means instant death. Fast reflexes, zero mercy.",
+    "tags": [
+      "💀 Survival",
+      "⚡ Fast-Paced",
+      "🏃 Runner",
+      "🎮 Solo"
+    ],
+    "screens": [
+      "💀",
+      "🏃",
+      "⚡",
+      "🔥",
+      "🏁"
+    ]
+  },
+  "Basket Bros": {
+    "emoji": "🏀",
+    "genre": "Sports",
+    "rating": "4.8",
+    "rcount": "120k",
+    "url": "https://basketbros-unblocked.github.io/a7/basket-bros/",
+    "desc": "Brawl your way to the basket in this wild 2-player basketball fighter. Punch, jump, and dunk your way to victory.",
+    "tags": [
+      "🏀 Basketball",
+      "👥 2 Player",
+      "👊 Brawler",
+      "⚡ Casual"
+    ],
+    "screens": [
+      "🏀",
+      "👊",
+      "🏆",
+      "👥",
+      "😂"
+    ]
+  }
+}
