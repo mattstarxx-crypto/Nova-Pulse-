@@ -1,4 +1,3 @@
-
 // ═══════════════════════════════════════
 // GAME REQUEST
 // ═══════════════════════════════════════
@@ -19,20 +18,21 @@ async function submitGameRequest(){
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {
-    await fetch('https://discord.com/api/webhooks/1478918716040282132/WjBUKORSh-9X4E7ZeFFezxpwRbnvV7NFYnZ2zxEvrLsoLt_usm_qELEXx1iNmcqV1l8X', {
+    const fd = new FormData();
+    fd.append('payload_json', JSON.stringify({
+      username: 'Nova Pulse ✦',
+      embeds: [{
+        title: '🎮 New Game Request',
+        description: val,
+        color: 0x38c9d8,
+        footer: { text: 'Nova Pulse Games · ' + new Date().toLocaleString() }
+      }]
+    }));
+    const res = await fetch('https://discord.com/api/webhooks/1478918716040282132/WjBUKORSh-9X4E7ZeFFezxpwRbnvV7NFYnZ2zxEvrLsoLt_usm_qELEXx1iNmcqV1l8X', {
       method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({
-        username: 'Nova Pulse ✦',
-        avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
-        embeds: [{
-          title: '🎮 New Game Request',
-          description: val,
-          color: 0x38c9d8,
-          footer: { text: 'Nova Pulse Games · ' + new Date().toLocaleString() }
-        }]
-      })
+      body: fd
     });
+    if(!res.ok) throw new Error(res.status);
     btn.textContent = '✦ Sent to Discord!';
     btn.style.background = 'var(--accent2)';
     setTimeout(()=>{
