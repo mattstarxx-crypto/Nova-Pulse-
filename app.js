@@ -11,17 +11,40 @@ function closeGameRequest(){
   document.getElementById('game-request-input').value='';
 }
 
-function submitGameRequest(){
+async function submitGameRequest(){
   const val = document.getElementById('game-request-input').value.trim();
   if(!val) return;
   const btn = document.querySelector('#game-request-overlay .game-play-btn');
-  btn.textContent = '✦ Request Sent!';
-  btn.style.background = 'var(--accent2)';
-  setTimeout(()=>{
-    closeGameRequest();
-    btn.textContent = 'Submit Request ✦';
-    btn.style.background = '';
-  }, 1800);
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    await fetch('https://discord.com/api/webhooks/1478918716040282132/WjBUKORSh-9X4E7ZeFFezxpwRbnvV7NFYnZ2zxEvrLsoLt_usm_qELEXx1iNmcqV1l8X', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        username: 'Nova Pulse ✦',
+        avatar_url: 'https://cdn.discordapp.com/embed/avatars/0.png',
+        embeds: [{
+          title: '🎮 New Game Request',
+          description: val,
+          color: 0x38c9d8,
+          footer: { text: 'Nova Pulse Games · ' + new Date().toLocaleString() }
+        }]
+      })
+    });
+    btn.textContent = '✦ Sent to Discord!';
+    btn.style.background = 'var(--accent2)';
+    setTimeout(()=>{
+      closeGameRequest();
+      btn.textContent = 'Submit Request ✦';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 1800);
+  } catch(e) {
+    btn.textContent = 'Failed — try again';
+    btn.style.background = 'rgba(255,60,60,.4)';
+    setTimeout(()=>{ btn.textContent='Submit Request ✦'; btn.style.background=''; btn.disabled=false; }, 2000);
+  }
 }
 
 // ── Data loaders ──────────────────────────────────────────────────────────
