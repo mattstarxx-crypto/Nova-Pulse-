@@ -167,14 +167,56 @@
       <div class="games-header">
         <div>
           <div style="font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--text);letter-spacing:-.5px;">Games ✦</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px;">Your library</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px;">Your library · what's hot</div>
+        </div>
+        <button class="game-request-btn" onclick="openGameRequest()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Request Game
+        </button>
+      </div>
+
+      <!-- Featured / Trending -->
+      <div class="game-hero" onclick="openGameModal('Basket Random')">
+        <div class="game-hero-art">🏀</div>
+        <div class="game-hero-info">
+          <div class="game-hero-tag">🔥 Trending Now</div>
+          <div class="game-hero-title">Basket Random</div>
+          <div class="game-hero-desc">Wacky two-player basketball with ragdoll physics and random madness every round. Easy to pick up, impossible to put down.</div>
+          <div class="game-hero-badges">
+            <div class="gbadge">🏀 Sports</div>
+            <div class="gbadge">👥 2 Player</div>
+            <div class="gbadge">😂 Ragdoll</div>
+          </div>
         </div>
       </div>
+
       <div class="games-grid" id="games-grid">
         <div class="gcard" onclick="openGameModal('Fnaf 1')"><div class="gcard-badge">😱</div><div class="gcard-thumb">🐻</div><div class="gcard-body"><div class="gcard-title">Fnaf 1</div><div class="gcard-meta">Horror · Classic</div></div></div>
         <div class="gcard" onclick="openGameModal('Basket Random')"><div class="gcard-badge">HOT</div><div class="gcard-thumb">🏀</div><div class="gcard-body"><div class="gcard-title">Basket Random</div><div class="gcard-meta">Sports · 2 Player</div></div></div>
         <div class="gcard" onclick="openGameModal('Slope')"><div class="gcard-badge">🔥</div><div class="gcard-thumb">🔵</div><div class="gcard-body"><div class="gcard-title">Slope</div><div class="gcard-meta">Arcade · Solo</div></div></div>
         <div class="gcard" onclick="openGameModal('Color Tunnel')"><div class="gcard-badge">NEW</div><div class="gcard-thumb">🌈</div><div class="gcard-body"><div class="gcard-title">Color Tunnel</div><div class="gcard-meta">Arcade · Solo</div></div></div>
+        <div class="gcard" onclick="openGameModal('Ragdoll Archers')"><div class="gcard-badge">HOT</div><div class="gcard-thumb">🏹</div><div class="gcard-body"><div class="gcard-title">Ragdoll Archers</div><div class="gcard-meta">Action · Solo</div></div></div>
+        <div class="gcard" onclick="openGameModal('Ragdoll Hit')"><div class="gcard-badge">NEW</div><div class="gcard-thumb">👊</div><div class="gcard-body"><div class="gcard-title">Ragdoll Hit</div><div class="gcard-meta">Action · Solo</div></div></div>
+        <div class="gcard" onclick="openGameModal('Death Run')"><div class="gcard-badge">🔥</div><div class="gcard-thumb">💀</div><div class="gcard-body"><div class="gcard-title">Death Run</div><div class="gcard-meta">Action · Solo</div></div></div>
+        <div class="gcard" onclick="openGameModal('Basket Bros')"><div class="gcard-badge">HOT</div><div class="gcard-thumb">🏀</div><div class="gcard-body"><div class="gcard-title">Basket Bros</div><div class="gcard-meta">Sports · 2 Player</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME REQUEST MODAL -->
+  <div class="game-modal-overlay" id="game-request-overlay" onclick="if(event.target===this)closeGameRequest()">
+    <div class="game-modal" style="max-height:420px;">
+      <div class="game-modal-hero" style="height:90px;font-size:36px;">🎮
+        <button class="game-modal-close" onclick="closeGameRequest()">✕</button>
+      </div>
+      <div class="game-modal-body" style="padding:20px 24px;">
+        <div class="game-modal-genre">✦ Community</div>
+        <div class="game-modal-title" style="font-size:20px;margin-bottom:14px;">Request a Game</div>
+        <input id="game-request-input" placeholder="Game name or URL..." style="width:100%;padding:12px 16px;border-radius:12px;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;box-sizing:border-box;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;">Drop a game name or paste an iframe/URL and it'll get added ✦</div>
+      </div>
+      <div class="game-modal-footer">
+        <button class="game-play-btn" onclick="submitGameRequest()" style="font-size:14px;">Submit Request ✦</button>
       </div>
     </div>
   </div>
